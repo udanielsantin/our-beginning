@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Bem-vindo</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Olá, eu sou o Daniel 👋</h1>
+    <p>Bem-vindo ao meu site pessoal!</p>
+    <a href="{{ url_for('mainpage') }}">
+      <button>Ver Portfólio</button>
+    </a>
+  </div>
+</body>
+</html>
