@@ -3,19 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <title>Meu Portfólio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap e fonte -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<body class="bg-light">
+<body>
 
+  <div class="text-center mt-3 mb-4">
+    <h1>Nossa linha do tempo</h1>
+  </div>
+  <!-- Data de referência -->
+  <div class="text-center mt-3 mb-4">
+    <span class="fs-5">Esse é Tempo que se passou desde do nosso primeiro beijo S2 </span>
+  </div>
+
+  <!-- Contador -->
+  <div id="timer" class="d-flex justify-content-center gap-3 flex-wrap"></div>
+
+  <!-- Carrossel -->
   <div class="container mt-5">
-    <h1 class="text-center">Meu Portfólio</h1>
-
-    <!-- Carrossel -->
-    <div id="portfolioCarousel" class="carousel slide mt-4" data-bs-ride="carousel">
+    <div id="portfolioCarousel" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
         {% for projeto in projetos %}
         <div class="carousel-item {% if loop.first %}active{% endif %}">
-          <img src="{{ url_for('static', filename=projeto.imagem) }}" class="d-block w-100" alt="...">
+          <img src="{{ url_for('static', filename=projeto.imagem) }}" class="d-block w-100" alt="Imagem do {{ projeto.titulo }}">
           <div class="carousel-caption d-none d-md-block">
             <h5>{{ projeto.titulo }}</h5>
             <p>{{ projeto.descricao }}</p>
@@ -32,6 +46,8 @@
     </div>
   </div>
 
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>

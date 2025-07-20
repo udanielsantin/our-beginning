@@ -1,20 +1,96 @@
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
-  text-align: center;
-  padding-top: 100px;
+  background-color: #121212;
+  color: #ffffff;
+  font-family: 'Roboto Mono', monospace;
+  overflow: hidden;
+  position: relative;
+  margin: 0;
+  padding: 0;
 }
 
-button {
-  padding: 10px 20px;
-  font-size: 18px;
-  background-color: #007BFF;
+.timer-box {
+  background: #1f1f1f;
+  color: #fff;
+  border-radius: 0.75rem;
+  padding: 1rem 1.25rem;
+  text-align: center;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.1);
+  min-width: 80px;
+}
+
+.timer-box span {
+  font: 700 2.2rem 'Roboto Mono', monospace;
+}
+
+.timer-box small {
+  font-size: .70rem;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  opacity: .85;
+}
+
+.heart {
+  position: absolute;
+  top: -30px; /* começa acima do topo da tela */
+  left: 0;
+  width: 16px;
+  height: 16px;
+  background: #e25555;
+  transform: rotate(45deg);
+  animation: fall linear;
+  animation-duration: 6s;
+  z-index: 0;
+}
+
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: #e25555;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -8px;
+  left: 0;
+}
+
+.heart::after {
+  top: 0;
+  left: -8px;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+
+.special-btn {
+  display: block;
+  padding: 18px 40px;
+  font-size: 28px;
+  background-color: #666666;
   color: white;
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  margin: 0 auto;
+  text-align: center;
+  text-decoration: none; /* Adicionado para remover a linha */
 }
 
-button:hover {
+.special-btn:hover {
   background-color: #0056b3;
 }
+
+

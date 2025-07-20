@@ -1,17 +1,28 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <title>Bem-vindo</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
-  <div class="container">
-    <h1>Olá, eu sou o Daniel 👋</h1>
-    <p>Bem-vindo ao meu site pessoal!</p>
+  <div>
+    <h1>Oi Raquel, tudo bom?</h1>
+    <p class="message">
+      Sei que pareço meio emocionado 😅, mas fiz essa site pq n sou mt bom com palavras, n sou bom em quase nada na vdd
+      kkkk.<br>
+      Mas eu sou um pouquinho bom em programar 💻, e eu queria fazer algo especial pra vc 💖.<br>
+      Desculpa ter ficado muito simples, prometo que vou melhorar ele com o tempo ⏳.<br>
+      Eu só queria que vc soubesse que eu gosto mt de vc 🥰 e essa foi a maneira que encontrei para tentar te mostrar
+      isso.<br>
+      Eu espero que vc goste, e que a gente possa passar mtos momentos juntos ✨.
+    </p>
     <a href="{{ url_for('mainpage') }}">
-      <button>Ver Portfólio</button>
+      <button class="special-btn">Ver Site</button>
     </a>
   </div>
 </body>
+
 </html>
